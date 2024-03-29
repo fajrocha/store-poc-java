@@ -10,6 +10,8 @@ services:
       - postgres:/data/postgres
     ports:
       - "5432:5432"
+    networks:
+      - postgres
     restart: unless-stopped
 
   pgadmin:
@@ -23,6 +25,8 @@ services:
       - pgadmin:/var/lib/pgadmin
     ports:
       - "5050:80"
+    networks:
+      - postgres
     restart: unless-stopped
 
   zipkin:
@@ -30,6 +34,8 @@ services:
     image: openzipkin/zipkin
     ports:
       - "9411:9411"
+    networks:
+      - store
 
   rabbitmq:
     container_name: rabbitmq
@@ -37,6 +43,8 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+      - store
 
   eureka-server:
     container_name: eureka-server
@@ -45,6 +53,8 @@ services:
       - "8761:8761"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - store
     depends_on:
       - zipkin
 
@@ -55,6 +65,8 @@ services:
       - "8083:8083"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - store
     depends_on:
       - zipkin
       - eureka-server
@@ -66,6 +78,9 @@ services:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - store
+      - postgres
     depends_on:
       - zipkin
       - eureka-server
@@ -79,6 +94,9 @@ services:
       - "8081:8081"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - store
+      - postgres
     depends_on:
       - zipkin
       - eureka-server
@@ -91,11 +109,20 @@ services:
       - "8082:8082"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - store
+      - postgres
     depends_on:
       - zipkin
       - eureka-server
       - api-gateway
       - rabbitmq
+
+networks:
+  postgres:
+    driver: bridge
+  store:
+    driver: bridge
 
 volumes:
   postgres:
