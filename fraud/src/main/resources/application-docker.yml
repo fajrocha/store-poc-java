@@ -20,12 +20,6 @@ spring:
     show-sql: true
 fraud:
   fraudulent: false
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka
 management:
   tracing:
     sampling:

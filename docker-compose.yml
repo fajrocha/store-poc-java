@@ -46,77 +46,77 @@ services:
     networks:
       - store
 
-  eureka-server:
-    container_name: eureka-server
-    image: fajr0cha/eureka-server:latest
-    ports:
-      - "8761:8761"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-    depends_on:
-      - zipkin
-
-  api-gateway:
-    container_name: api-gateway
-    image: fajr0cha/api-gateway:latest
-    ports:
-      - "8083:8083"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-    depends_on:
-      - zipkin
-      - eureka-server
-
-  customer:
-    container_name: customer
-    image: fajr0cha/customer:latest
-    ports:
-      - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-      - postgres
-    depends_on:
-      - zipkin
-      - eureka-server
-      - api-gateway
-      - rabbitmq
-
-  fraud:
-    container_name: fraud
-    image: fajr0cha/fraud:latest
-    ports:
-      - "8081:8081"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-      - postgres
-    depends_on:
-      - zipkin
-      - eureka-server
-      - api-gateway
-
-  notification:
-    container_name: notification
-    image: fajr0cha/notification:latest
-    ports:
-      - "8082:8082"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-      - postgres
-    depends_on:
-      - zipkin
-      - eureka-server
-      - api-gateway
-      - rabbitmq
+#  eureka-server:
+#    container_name: eureka-server
+#    image: fajr0cha/eureka-server:latest
+#    ports:
+#      - "8761:8761"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#    depends_on:
+#      - zipkin
+#
+#  api-gateway:
+#    container_name: api-gateway
+#    image: fajr0cha/api-gateway:latest
+#    ports:
+#      - "8083:8083"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#    depends_on:
+#      - zipkin
+#      - eureka-server
+#
+#  customer:
+#    container_name: customer
+#    image: fajr0cha/customer:latest
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - eureka-server
+#      - api-gateway
+#      - rabbitmq
+#
+#  fraud:
+#    container_name: fraud
+#    image: fajr0cha/fraud:latest
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - eureka-server
+#      - api-gateway
+#
+#  notification:
+#    container_name: notification
+#    image: fajr0cha/notification:latest
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - eureka-server
+#      - api-gateway
+#      - rabbitmq
 
 networks:
   postgres:
