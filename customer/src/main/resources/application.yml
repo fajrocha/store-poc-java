@@ -1,8 +1,6 @@
 server:
   port: 8080
 spring:
-  profiles:
-    active: default
   application:
     name: customer
   datasource:
@@ -17,6 +15,12 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          fraud:
+            url: "http://localhost:8081"
   rabbitmq:
     addresses: localhost:5672
 logging:
