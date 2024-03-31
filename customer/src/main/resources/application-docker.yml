@@ -20,7 +20,7 @@ spring:
       client:
         config:
           fraud:
-            url: "http://fraud"
+            url: "http://fraud:8081"
   rabbitmq:
     addresses: rabbitmq:5672
 logging:
