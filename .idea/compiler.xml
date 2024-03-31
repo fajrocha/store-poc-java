@@ -12,6 +12,7 @@
         <module name="fraud" />
         <module name="amqp" />
         <module name="customer" />
+        <module name="kafka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
