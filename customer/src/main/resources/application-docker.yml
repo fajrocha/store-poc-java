@@ -15,14 +15,14 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          fraud:
+            url: "http://fraud:8081"
   rabbitmq:
     addresses: rabbitmq:5672
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka
 logging:
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %clr(%5p [${spring.application.name:-},%X{traceId:-},%X{spanId:-}]) %clr([%15.15t]){cyan} %clr(%-40.40logger{39}){magenta} : %m%n%wex"
