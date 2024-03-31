@@ -1,3 +1,7 @@
+# Local Dev Only
+
+This is just for local development only, with Minikube as a local Kubernetes provider.
+
 # Pods setup:
 
 ```zsh

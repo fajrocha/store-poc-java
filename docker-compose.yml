@@ -46,46 +46,46 @@ services:
     networks:
       - store
 
-  customer:
-    container_name: customer
-    image: fajr0cha/customer:latest
-    ports:
-      - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-      - postgres
-    depends_on:
-      - zipkin
-      - rabbitmq
-
-  fraud:
-    container_name: fraud
-    image: fajr0cha/fraud:latest
-    ports:
-      - "8081:8081"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-      - postgres
-    depends_on:
-      - zipkin
-
-  notification:
-    container_name: notification
-    image: fajr0cha/notification:latest
-    ports:
-      - "8082:8082"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - store
-      - postgres
-    depends_on:
-      - zipkin
-      - rabbitmq
+#  customer:
+#    container_name: customer
+#    image: fajr0cha/customer:latest
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - rabbitmq
+#
+#  fraud:
+#    container_name: fraud
+#    image: fajr0cha/fraud:latest
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#      - postgres
+#    depends_on:
+#      - zipkin
+#
+#  notification:
+#    container_name: notification
+#    image: fajr0cha/notification:latest
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - store
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - rabbitmq
 
 networks:
   postgres:
