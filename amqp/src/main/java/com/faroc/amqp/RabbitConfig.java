@@ -21,6 +21,7 @@ public class RabbitConfig {
     public AmqpTemplate template() {
         RabbitTemplate template = new RabbitTemplate(connectionFactory);
         template.setMessageConverter(jacksonConverter());
+        template.setObservationEnabled(true);
 
         return template;
     }
@@ -31,6 +32,7 @@ public class RabbitConfig {
 
         factory.setConnectionFactory(connectionFactory);
         factory.setMessageConverter(jacksonConverter());
+        factory.setObservationEnabled(true);
 
         return factory;
     }
