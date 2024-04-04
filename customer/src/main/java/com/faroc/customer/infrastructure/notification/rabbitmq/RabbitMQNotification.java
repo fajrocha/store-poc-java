@@ -1,4 +1,4 @@
-package com.faroc.customer.infrastructure.notification;
+package com.faroc.customer.infrastructure.notification.rabbitmq;
 
 import com.faroc.amqp.RabbitMQProducer;
 import com.faroc.customer.application.gateways.NotificationGateway;

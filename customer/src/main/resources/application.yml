@@ -25,6 +25,9 @@ spring:
     addresses: localhost:5672
   kafka:
     bootstrap-servers: localhost:29092
+    app:
+      topics:
+        notification: "notification"
 logging:
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %clr(%5p [${spring.application.name:-},%X{traceId:-},%X{spanId:-}]) %clr([%15.15t]){cyan} %clr(%-40.40logger{39}){magenta} : %m%n%wex"
