@@ -4,7 +4,7 @@ import com.faroc.customer.application.gateways.CustomerGateway;
 import com.faroc.customer.application.gateways.FraudGateway;
 import com.faroc.customer.application.gateways.NotificationGateway;
 import com.faroc.customer.domain.entities.CustomerRegistration;
-import com.faroc.customer.domain.entities.NotificationRequest;
+import com.faroc.kafka.contracts.NotificationRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

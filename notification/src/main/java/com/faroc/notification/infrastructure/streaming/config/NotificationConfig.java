@@ -1,4 +1,4 @@
-package com.faroc.notification.infrastructure.message.config;
+package com.faroc.notification.infrastructure.streaming.config;
 
 import lombok.Data;
 import org.springframework.amqp.core.Binding;

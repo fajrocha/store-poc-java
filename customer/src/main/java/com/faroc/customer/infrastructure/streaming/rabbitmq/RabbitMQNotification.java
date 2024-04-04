@@ -1,8 +1,8 @@
-package com.faroc.customer.infrastructure.notification.rabbitmq;
+package com.faroc.customer.infrastructure.streaming.rabbitmq;
 
 import com.faroc.amqp.RabbitMQProducer;
 import com.faroc.customer.application.gateways.NotificationGateway;
-import com.faroc.customer.domain.entities.NotificationRequest;
+import com.faroc.kafka.contracts.NotificationRequest;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

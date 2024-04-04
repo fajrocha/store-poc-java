@@ -1,4 +1,4 @@
-package com.faroc.customer.infrastructure.notification.kafka;
+package com.faroc.customer.infrastructure.streaming.kafka;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Value;

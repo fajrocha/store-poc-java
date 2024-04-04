@@ -1,7 +1,4 @@
-package com.faroc.customer.domain.entities;
+package com.faroc.kafka.contracts;
 
-import lombok.Builder;
-
-@Builder
 public record NotificationRequest(int id, String email, String message) {
 }

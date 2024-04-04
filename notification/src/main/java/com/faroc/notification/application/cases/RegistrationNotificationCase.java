@@ -15,7 +15,6 @@ public class RegistrationNotificationCase {
     @EventListener
     public void handleUserRegistrationEvent(NotificationEvent event) {
         var notification = event.getNotification();
-        log.info("Received the following notification: {}", notification);
 
         notificationGateway.save(notification);
     }
