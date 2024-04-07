@@ -21,8 +21,16 @@ spring:
         config:
           fraud:
             url: "http://fraud"
-  rabbitmq:
-    addresses: rabbitmq:5672
+  kafka:
+    bootstrap-servers: kafka-broker:9092
+    app:
+      topics:
+        notification: "notification"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      observation-enabled: true
 logging:
   pattern:
     console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %clr(%5p [${spring.application.name:-},%X{traceId:-},%X{spanId:-}]) %clr([%15.15t]){cyan} %clr(%-40.40logger{39}){magenta} : %m%n%wex"

@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: notification
-  rabbitmq:
-    addresses: localhost:5672
   kafka:
     bootstrap-servers: localhost:29092
     app:

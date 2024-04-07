@@ -15,7 +15,6 @@ import java.util.UUID;
 @SpringBootApplication(
         scanBasePackages = {
                 "com.faroc.customer",
-                "com.faroc.amqp",
                 "com.faroc.kafka",
         }
 )

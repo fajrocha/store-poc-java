@@ -21,8 +21,6 @@ spring:
         config:
           fraud:
             url: "http://localhost:8081"
-  rabbitmq:
-    addresses: localhost:5672
   kafka:
     bootstrap-servers: localhost:29092
     app:

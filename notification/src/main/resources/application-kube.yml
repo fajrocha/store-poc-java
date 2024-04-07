@@ -3,8 +3,22 @@ server:
 spring:
   application:
     name: notification
-  rabbitmq:
-    addresses: rabbitmq:5672
+  kafka:
+    bootstrap-servers: kafka-broker:9092
+    app:
+      topics:
+        notification: "notification"
+    consumer:
+      group-id: notification
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+    listener:
+      observation-enabled: true
   datasource:
     username: 'faroc'
     url: jdbc:postgresql://postgres:5432/notification
