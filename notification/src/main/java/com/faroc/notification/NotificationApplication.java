@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(
         scanBasePackages = {
-                "com.faroc.notification",
-                "com.faroc.amqp"
+                "com.faroc.notification"
         }
 )
 public class NotificationApplication {

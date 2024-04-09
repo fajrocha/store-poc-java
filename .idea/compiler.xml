@@ -9,14 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="notification" />
         <module name="clients" />
+        <module name="kafka-contracts" />
         <module name="fraud" />
-        <module name="amqp" />
         <module name="customer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="amqp" target="17" />
       <module name="api-gateway" target="17" />
       <module name="eureka-server" target="17" />
+      <module name="kafka" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

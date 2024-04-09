@@ -1,7 +1,7 @@
 package com.faroc.notification.infrastructure.persistence.notification;
 
+import com.faroc.kafka.contracts.NotificationRequest;
 import com.faroc.notification.application.gateways.NotificationGateway;
-import com.faroc.notification.domain.NotificationRegistration;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class NotificationJpaGateway implements NotificationGateway {
     private final NotificationJpaRepository repository;
 
     @Override
-    public void save(NotificationRegistration request) {
+    public void save(NotificationRequest request) {
 
         var notification = Notification.builder()
                 .toCustomerId(request.id())

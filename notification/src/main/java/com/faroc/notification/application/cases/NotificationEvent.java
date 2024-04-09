@@ -1,17 +1,17 @@
 package com.faroc.notification.application.cases;
 
+import com.faroc.kafka.contracts.NotificationRequest;
 import org.springframework.context.ApplicationEvent;
-import com.faroc.notification.domain.NotificationRegistration;
 
 public class NotificationEvent extends ApplicationEvent {
-    private final NotificationRegistration notificationRequest;
+    private final NotificationRequest notificationRegistration;
 
-    public NotificationEvent(Object source, NotificationRegistration notificationRequest) {
+    public NotificationEvent(Object source, NotificationRequest notificationRegistration) {
         super(source);
-        this.notificationRequest = notificationRequest;
+        this.notificationRegistration = notificationRegistration;
     }
 
-    public NotificationRegistration getNotification() {
-        return notificationRequest;
+    public NotificationRequest getNotification() {
+        return notificationRegistration;
     }
 }
